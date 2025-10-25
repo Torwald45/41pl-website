@@ -1,23 +1,56 @@
-# Codefolio
-An open-source portfolio for devs to showcase their projects, coding skills and perosnal story.
+# 41.pl - Professional Company Website
 
-## Quick Start
+Corporate website for 41.pl (synchronicity.one sp. z o.o.) - IT services including server administration, web development, and technical support.
 
-```bash
-npm create astro@latest -- --template danielunited/codefolio
+## 🚀 Technologies
 
-# Follow the interactive prompts to create the project
+- **Framework:** Astro 5.x (SSG)
+- **Font:** Bakbak One (custom)
+- **Icons:** Lucide Icons (MIT License)
+- **Deployment:** Cloudflare Pages
+- **Base Template:** [Codefolio](https://github.com/danielunited/codefolio) (MIT License)
 
-cd <your-project-name>
-npm run dev     # Will start the local development server at http://localhost:4321 by default
-
+## 📦 Project Structure
+```
+/
+├── public/
+│   └── assets/          # Images, icons, fonts, CSS
+├── src/
+│   ├── components/      # Astro components (Sidebar, Header, Project)
+│   ├── pages/           # Pages (index, server-admin, web-dev, additional-services)
+│   └── layouts/         # Main layout
+├── astro.config.mjs     # Astro configuration
+└── package.json
 ```
 
-## Deployment
-The current branch can be fully static built and deployed on any static hosting platform.
+## 🛠️ Local Installation
+```bash
+# Clone repository
+git clone https://github.com/Torwald45/41pl-website.git
+cd 41pl-website
 
-For deployment methods on various platforms, refer to the [Astro Official Deployment Guide](https://docs.astro.build/en/guides/deploy/).
+# Install dependencies
+npm install
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+# Start dev server
+npm run dev
+# Available at: http://localhost:4321
 
+# Production build
+npm run build
+```
+
+## 🌐 Deployment
+
+Website automatically deploys to Cloudflare Pages on every push to `main` branch.
+
+**Live:** https://41.pl
+
+## 📝 License
+
+MIT License - based on [Codefolio](https://github.com/danielunited/codefolio) template
+
+---
+
+**Owner:** synchronicity.one sp. z o.o.  
+**Contact:** kontakt@41.pl
