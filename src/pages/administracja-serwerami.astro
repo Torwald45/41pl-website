@@ -1,0 +1,91 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const projects = [
+  {
+    title: "Infrastruktura hostingowa",
+    desc: [
+      "Konfiguracja VPS z Docker + Traefik",
+      "Reverse proxy i automatyczne certyfikaty SSL",
+      "Serwer poczty z domenami własnymi",
+      "Monitoring i backup"
+    ],
+    tech: ["Docker", "Traefik", "Nginx", "Cloudflare", "Debian", "MariaDB"]
+  },
+  {
+    title: "Migracja do chmury",
+    desc: [
+      "Transfer z shared hosting na dedykowany VDS",
+      "Konfiguracja sieci i firewall",
+      "Automatyzacja przez skrypty i narzędzia IaC",
+      "DNS management przez API"
+    ],
+    tech: ["Debian", "Docker", "Bash", "Ansible", "Cloudflare"]
+  },
+  {
+    title: "High availability setup",
+    desc: [
+      "Multi-node z load balancing",
+      "Aplikacje do automatyzacji i file hosting",
+      "GTM Server Side tracking",
+      "Integracja z ekosystemami chmurowymi"
+    ],
+    tech: ["Docker", "Google Cloud", "Nginx", "Redis", "SSH"]
+  },
+  {
+    title: "Email delivery solutions",
+    desc: [
+      "Konfiguracja Amazon SES dla wysokiej dostarczalności",
+      "Wdrożenie platformy email marketingowej",
+      "Integracja z systemami CRM",
+      "SMTP relay i monitoring wysyłki"
+    ],
+    tech: ["Amazon SES", "MailWizz", "Mailcow", "Docker", "API integrations"]
+  }
+];
+---
+<!DOCTYPE html>
+<html>
+  <Header title="Administracja serwerami | 41.pl" />
+  <body>
+    <div class="content">
+        <Sidebar selectedItem="software-development" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Powrót</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Administracja serwerami</h1>
+
+            <p class="lead">
+              Zajmujemy się administracją serwerów od strony technicznej. Konfigurujemy infrastrukturę od podstaw, dbamy o jej codzienne funkcjonowanie i rozwijamy ją razem z Twoimi potrzebami. Pracujemy głównie przez linie komend, ponieważ daje to pełną kontrolę nad systemem. Stawiamy na rozwiązania Open Source, które można dostosować i które nie uzależniają od jednego dostawcy. Zarządzamy serwerami WWW, pocztą, bazami danych oraz różnymi aplikacjami w chmurze.
+            </p>
+
+            <p class="lead">
+              Budujemy infrastrukturę w kontenerach Docker, co pozwala na łatwe skalowanie i przenoszenie usług między serwerami. Konfigurujemy automatyczne certyfikaty SSL, reverse proxy, monitorujemy dostępność i wykonujemy regularne backupy. Automatyzujemy powtarzalne zadania przez skrypty i narzędzia do zarządzania konfiguracją. Wdrażamy rozwiązania do przechowywania plików w chmurze prywatnej, automatyzacji procesów biznesowych, obsługi poczty oraz prywatnych modeli AI. Integrujemy infrastrukturę z ekosystemami Google i Microsoft. Konfigurujemy profesjonalne systemy wysyłki mailingowej i platformy email marketingowe.
+            </p>
+
+            <section class="items-container">
+                <div class="resouce-items">
+                    {projects.map(project => (
+                      <Project
+                        title={project.title}
+                        desc={project.desc}
+                        tech={project.tech}
+                      />
+                    ))}
+                  </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

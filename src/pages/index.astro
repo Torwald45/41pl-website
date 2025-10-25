@@ -1,0 +1,113 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+---
+<!DOCTYPE html>
+<html>
+  <Header title="41.pl" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="Start" />
+      <nav class="main">
+        <div class="container">
+          <main class="fold-content-container">
+            <div class="fold-content">
+              <h1>41.pl - rozwiązania IT szyte na miarę.</h1>
+              <p class="lead">
+                Pracujemy powoli i dokładnie. Każdy projekt zaczynamy od analizy, wszystkie zmiany testujemy przed wdrożeniem. Dbamy o bezpieczeństwo - regularne backupy, monitoring, procedury awaryjne. Każdą sprawę traktujemy indywidualnie, dostosowując rozwiązania do konkretnych potrzeb i budżetu.
+              </p>
+            </div>
+            <a href="mailto:kontakt@41.pl" class="button w-button">Napisz do nas: kontakt@41.pl</a>
+          </main>
+          <div class="projects-section">
+            <!-- Administracja serwerami -->
+            <a href="/administracja-serwerami" class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src="./assets/administracja.svg" loading="lazy" alt="" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Administracja serwerami</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Technologie &amp; narzędzia</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">Docker</div>
+                    <div class="single-chip small-chip">Nginx</div>
+                    <div class="single-chip small-chip">Debian</div>
+                    <div class="single-chip small-chip">Cloudflare</div>
+                    <div class="single-chip small-chip">Traefik</div>
+                    <div class="single-chip small-chip">MariaDB</div>
+                    <div class="single-chip small-chip">Ansible</div>
+                    <div class="single-chip small-chip">Bash</div>
+                    <div class="single-chip small-chip">Redis</div>
+                    <div class="single-chip small-chip">SSH</div>
+                    <div class="single-chip small-chip">Mailcow</div>
+                    <div class="single-chip small-chip">Linux</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Tworzenie stron internetowych -->
+            <a href="/tworzenie-stron-internetowych" class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src="./assets/strony-www.svg" loading="lazy" alt="" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Tworzenie stron internetowych</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Technologie &amp; narzędzia</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">PHP</div>
+                    <div class="single-chip small-chip">WordPress</div>
+                    <div class="single-chip small-chip">HTML/CSS/JS</div>
+                    <div class="single-chip small-chip">React</div>
+                    <div class="single-chip small-chip">Next.js</div>
+                    <div class="single-chip small-chip">SQL</div>
+                    <div class="single-chip small-chip">Git</div>
+                    <div class="single-chip small-chip">Figma</div>
+                    <div class="single-chip small-chip">GraphQL</div>
+                    <div class="single-chip small-chip">REST API</div>
+                    <div class="single-chip small-chip">Redis</div>
+                    <div class="single-chip small-chip">Directus</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- Usługi dodatkowe -->
+            <a href="/uslugi-dodatkowe" class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container devops-img">
+                  <img src="./assets/programowanie.svg" loading="lazy" alt="" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Usługi dodatkowe</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Technologie &amp; narzędzia</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">SSH</div>
+                    <div class="single-chip small-chip">Docker</div>
+                    <div class="single-chip small-chip">Bash</div>
+                    <div class="single-chip small-chip">Git</div>
+                    <div class="single-chip small-chip">SQL</div>
+                    <div class="single-chip small-chip">API</div>
+                    <div class="single-chip small-chip">Ansible</div>
+                    <div class="single-chip small-chip">rsync</div>
+                    <div class="single-chip small-chip">Lighthouse</div>
+                    <div class="single-chip small-chip">Curl</div>
+                    <div class="single-chip small-chip">Postman</div>
+                    <div class="single-chip small-chip">Python</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

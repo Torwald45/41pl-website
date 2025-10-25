@@ -1,0 +1,91 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const projects = [
+  {
+    title: "Audyty techniczne",
+    desc: [
+      "Przegląd kodu i architektury",
+      "Analiza wydajności i bezpieczeństwa",
+      "Optymalizacja baz danych",
+      "Rekomendacje zmian i ulepszeń"
+    ],
+    tech: ["Lighthouse", "SQL profiling", "Security scanners", "Git"]
+  },
+  {
+    title: "Naprawy ad hoc",
+    desc: [
+      "Problemy produkcyjne 7 dni w tygodniu",
+      "Awarie serwerów i aplikacji",
+      "Debugging i fix błędów w kodzie",
+      "Odzyskiwanie danych z backupów"
+    ],
+    tech: ["SSH", "Docker", "SQL", "Git", "Bash"]
+  },
+  {
+    title: "Integracje systemów",
+    desc: [
+      "REST API i GraphQL",
+      "Automatyzacja procesów między platformami",
+      "Synchronizacja danych",
+      "Webhook i event-driven architecture"
+    ],
+    tech: ["Curl", "Postman", "Node.js", "Python", "API documentation"]
+  },
+  {
+    title: "Migracje i wdrożenia",
+    desc: [
+      "Przeniesienie między hostingami",
+      "Zmiana dostawcy chmury",
+      "Migracja do rozwiązań Open Source",
+      "Transfer danych i konfiguracji"
+    ],
+    tech: ["rsync", "mysqldump", "Docker", "Ansible", "Bash"]
+  }
+];
+---
+<!DOCTYPE html>
+<html>
+  <Header title="Inne usługi | 41.pl" />
+  <body>
+    <div class="content">
+        <Sidebar selectedItem="personal-projects" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Powrót</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Inne usługi</h1>
+            
+            <p class="lead">
+              Pomagamy w sytuacjach, które wymagają szybkiej reakcji lub specjalistycznej wiedzy. Przeprowadzamy audyty techniczne stron i infrastruktury, diagnozujemy problemy i naprawiamy błędy na produkcji. Doradzamy w doborze rozwiązań technicznych i pomagamy w ich wdrożeniu. Integrujemy różne systemy przez API, łączymy platformy i automatyzujemy procesy. Wspieramy w migracji danych, przeniesieniu między serwerami i zmianie technologii. Doradzamy w kwestiach bezpieczeństwa, wydajności i optymalizacji kosztów.
+            </p>
+            
+            <p class="lead">
+              Wykonujemy audyty kodu, baz danych, konfiguracji serwerów i wydajności aplikacji. Identyfikujemy wąskie gardła i proponujemy konkretne rozwiązania. Naprawiamy problemy produkcyjne - awarie serwerów, błędy w kodzie, problemy z bazami danych czy DNS. Budujemy integracje REST API i GraphQL między różnymi systemami. Pomagamy w doborze narzędzi Open Source dopasowanych do konkretnych potrzeb i budżetu. Przeprowadzamy migracje między hostingami, dostawcami chmury i systemami CMS. Wdrażamy szyfrowanie, VPN, self-hosting solutions i inne rozwiązania zwiększające prywatność i bezpieczeństwo.
+            </p>
+
+            <section class="items-container">
+                <div class="resouce-items">
+                    {projects.map(project => (
+                      <Project 
+                        title={project.title} 
+                        desc={project.desc}
+                        tech={project.tech}
+                      />
+                    ))}
+                  </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>
