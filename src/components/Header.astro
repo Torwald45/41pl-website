@@ -2,16 +2,19 @@
 import { ViewTransitions } from 'astro:transitions';
 interface HeaderProps {
   title: string;
+  description: string;
 }
-const { title } = Astro.props as HeaderProps;
+const { title, description } = Astro.props as HeaderProps;
 ---
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>{title}</title>
+  <meta name="description" content={description} />
   <ViewTransitions />
   <meta content={title} property="og:title" />
+  <meta content={description} property="og:description" />
   <meta content={title} property="twitter:title" />
+  <meta content={description} property="twitter:description" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/" rel="preconnect" />
