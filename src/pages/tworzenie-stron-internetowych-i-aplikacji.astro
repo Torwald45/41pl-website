@@ -1,0 +1,111 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const projects = [
+  {
+    title: "WP/Woo",
+    desc: [
+      "Custom motywy i wtyczki na zamówienie",
+      "Zaawansowane pola i struktury danych (ACF, Metabox)",
+      "Integracje płatności i logistyki",
+      "Optymalizacja wydajności i cache"
+    ],
+    tech: ["PHP", "WP/Woo", "HTML/CSS/JS", "ACF", "Redis", "SQL"]
+  },
+  {
+    title: "Landing pages + SEO off-page",
+    desc: [
+      "Strony zapasowe do kampanii linkowania",
+      "Kodowanie z projektów Figma/PSD",
+      "Responsive design i Web Vitals",
+      "Integracja Google Analytics i Tag Manager"
+    ],
+    tech: ["HTML/CSS/JS", "Figma", "SEO", "Git"]
+  },
+  {
+    title: "Headless CMS",
+    desc: [
+      "Backend w Payload CMS lub Directus",
+      "Frontend w React/Next.js/Astro",
+      "API REST lub GraphQL",
+      "Static generation i ISR"
+    ],
+    tech: ["Payload CMS", "Directus", "Next.js", "GraphQL", "API"]
+  },
+  {
+    title: "E-commerce headless",
+    desc: [
+      "Medusa.js jako backend sklepu",
+      "Custom frontend (React/Next.js)",
+      "Integracje płatności (Stripe, PayU)",
+      "Zarządzanie produktami i zamówieniami przez API"
+    ],
+    tech: ["Medusa.js", "Next.js", "API", "Stripe"]
+  },
+  {
+    title: "Aplikacje webowe",
+    desc: [
+      "Dashboardy i panele administracyjne",
+      "PWA z offline mode",
+      "Aplikacje SPA (React/Next.js)",
+      "Integracje z systemami zewnętrznymi"
+    ],
+    tech: ["React", "Next.js", "PWA", "API", "Git"]
+  }
+];
+---
+<!DOCTYPE html>
+<html>
+  <Header title="Tworzenie stron internetowych i aplikacji | 41.pl" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="devops" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block">
+              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Powrót</div>
+            </a>
+          </div>
+          <div class="content-container">
+            <h1>Tworzenie stron internetowych i aplikacji</h1>
+            
+            <p class="lead">
+              Tworzymy strony, sklepy i aplikacje webowe. Custom motywy WP, wtyczki Woo, landing pages z Figmy. Budujemy sklepy headless (np. Medusa.js), aplikacje SPA, dashboardy i PWA.
+            </p>
+            
+            <p class="lead">
+              Pracujemy z PHP i JavaScript. Frameworki: React, Next.js (SSR, ISR), Astro (SSG), Gatsby. Headless CMS: Payload, Directus. API REST i GraphQL. Optymalizacja baz SQL, cache Redis.
+            </p>
+            
+            <p class="lead">
+              Integrujemy płatności (Stripe, PayU, Przelewy24), logistykę, CRM, email marketing. Custom endpointy API. Zaawansowane struktury danych (ACF, Metabox).
+            </p>
+            
+            <p class="lead">
+              SEO on-page i SEO off-page. Google Analytics, Tag Manager, Web Vitals & RUM. Optymalizacja Core Web Vitals. Utrzymanie: aktualizacje, bugfixy, rozwój.
+            </p>
+            
+            <h3 class="lead">Przykładowe realizacje:</h3>
+            
+            <section class="items-container">
+              <div class="resouce-items">
+                {projects.map(project => (
+                  <Project 
+                    title={project.title} 
+                    desc={project.desc}
+                    tech={project.tech}
+                  />
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

@@ -5,44 +5,54 @@ import Sidebar from "../components/Sidebar.astro";
 
 const projects = [
   {
-    title: "Infrastruktura hostingowa",
+    title: "Hosting stron WWW",
     desc: [
-      "Konfiguracja VPS z Docker + Traefik",
-      "Reverse proxy i automatyczne certyfikaty SSL",
-      "Serwer poczty z domenami własnymi",
-      "Monitoring i backup"
+      "VPS z kontenerami Docker i Traefik",
+      "Reverse proxy z automatycznymi certyfikatami SSL",
+      "Load balancing dla wielu aplikacji",
+      "Monitoring dostępności i backupy"
     ],
-    tech: ["Docker", "Traefik", "Nginx", "Cloudflare", "Debian", "MariaDB"]
+    tech: ["Docker", "Traefik", "Nginx", "Let's Encrypt", "Debian"]
   },
   {
-    title: "Migracja do chmury",
+    title: "Środowisko Jamstack",
     desc: [
-      "Transfer z shared hosting na dedykowany VDS",
-      "Konfiguracja sieci i firewall",
-      "Automatyzacja przez skrypty i narzędzia IaC",
-      "DNS management przez API"
+      "Serwer Node.js dla aplikacji SSR",
+      "Integracja z Cloudflare Pages/Workers",
+      "CI/CD deployment z GitHub",
+      "CDN i optymalizacja wydajności"
     ],
-    tech: ["Debian", "Docker", "Bash", "Ansible", "Cloudflare"]
+    tech: ["Node.js", "Nginx", "Git", "Cloudflare", "Docker"]
   },
   {
-    title: "High availability setup",
+    title: "WooCommerce wysokiej wydajności",
     desc: [
-      "Multi-node z load balancing",
-      "Aplikacje do automatyzacji i file hosting",
-      "GTM Server Side tracking",
-      "Integracja z ekosystemami chmurowymi"
+      "Optymalizacja stacku LEMP pod WooCommerce",
+      "Redis dla cache obiektów i sesji",
+      "Bazy danych z replikacją",
+      "Backup transakcyjny i monitoring"
     ],
-    tech: ["Docker", "Google Cloud", "Nginx", "Redis", "SSH"]
+    tech: ["Nginx", "MariaDB", "Redis", "PHP-FPM", "Docker"]
   },
   {
-    title: "Email delivery solutions",
+    title: "Serwer poczty",
     desc: [
-      "Konfiguracja Amazon SES dla wysokiej dostarczalności",
-      "Wdrożenie platformy email marketingowej",
-      "Integracja z systemami CRM",
-      "SMTP relay i monitoring wysyłki"
+      "Mailcow z własnymi domenami",
+      "Konfiguracja SPF, DKIM, DMARC",
+      "Webmail i synchronizacja mobilna",
+      "Backup i archiwizacja wiadomości"
     ],
-    tech: ["Amazon SES", "MailWizz", "Mailcow", "Docker", "API integrations"]
+    tech: ["Mailcow", "Docker", "Postfix", "Dovecot", "rsnapshot"]
+  },
+  {
+    title: "Chmura prywatna",
+    desc: [
+      "Nextcloud dla file hosting i współpracy",
+      "Syncthing do synchronizacji plików",
+      "VPN dla bezpiecznego dostępu",
+      "Integracja z OnlyOffice lub Collabora"
+    ],
+    tech: ["Nextcloud", "Syncthing", "WireGuard", "Docker", "MariaDB"]
   }
 ];
 ---
@@ -51,36 +61,46 @@ const projects = [
   <Header title="Administracja serwerami | 41.pl" />
   <body>
     <div class="content">
-        <Sidebar selectedItem="software-development" />
+      <Sidebar selectedItem="software-development" />
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block"
-              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
-              <div>Powrót</div></a
-            >
+            <a href="/" class="back-nav-button w-inline-block">
+              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Powrót</div>
+            </a>
           </div>
           <div class="content-container">
             <h1>Administracja serwerami</h1>
-
+            
             <p class="lead">
-              Zajmujemy się administracją serwerów od strony technicznej. Konfigurujemy infrastrukturę od podstaw, dbamy o jej codzienne funkcjonowanie i rozwijamy ją razem z Twoimi potrzebami. Pracujemy głównie przez linie komend, ponieważ daje to pełną kontrolę nad systemem. Stawiamy na rozwiązania Open Source, które można dostosować i które nie uzależniają od jednego dostawcy. Zarządzamy serwerami WWW, pocztą, bazami danych oraz różnymi aplikacjami w chmurze.
+              Zajmujemy się administracją serwerów od strony technicznej. Konfigurujemy infrastrukturę od podstaw, dbamy o jej codzienne funkcjonowanie i rozwijamy ją razem z potrzebami projektu. Pracujemy głównie przez CLI, co daje pełną kontrolę nad systemem.
             </p>
-
+            
             <p class="lead">
-              Budujemy infrastrukturę w kontenerach Docker, co pozwala na łatwe skalowanie i przenoszenie usług między serwerami. Konfigurujemy automatyczne certyfikaty SSL, reverse proxy, monitorujemy dostępność i wykonujemy regularne backupy. Automatyzujemy powtarzalne zadania przez skrypty i narzędzia do zarządzania konfiguracją. Wdrażamy rozwiązania do przechowywania plików w chmurze prywatnej, automatyzacji procesów biznesowych, obsługi poczty oraz prywatnych modeli AI. Integrujemy infrastrukturę z ekosystemami Google i Microsoft. Konfigurujemy profesjonalne systemy wysyłki mailingowej i platformy email marketingowe.
+              Stawiamy na Open Source - rozwiązania można dostosować i nie uzależniają od jednego dostawcy. Zarządzamy serwerami WWW, pocztą, bazami danych oraz aplikacjami w chmurze. Budujemy infrastrukturę w kontenerach Docker dla łatwego skalowania i przenoszenia usług.
             </p>
-
+            
+            <p class="lead">
+              Konfigurujemy automatyczne certyfikaty SSL, reverse proxy, monitoring i regularne backupy. Automatyzujemy zadania przez skrypty Bash, Python i narzędzia IaC jak Ansible. Zarządzamy DNS przez API Cloudflare.
+            </p>
+            
+            <p class="lead">
+              Wdrażamy chmury prywatne do file hosting, systemy poczty z własnymi domenami, platformy email marketingowe i środowiska dla aplikacji Node.js. Integrujemy infrastrukturę z Google Cloud i Microsoft Azure.
+            </p>
+            
+            <h3 class="lead">Przykładowe konfiguracje:</h3>
+            
             <section class="items-container">
-                <div class="resouce-items">
-                    {projects.map(project => (
-                      <Project
-                        title={project.title}
-                        desc={project.desc}
-                        tech={project.tech}
-                      />
-                    ))}
-                  </div>
+              <div class="resouce-items">
+                {projects.map(project => (
+                  <Project
+                    title={project.title}
+                    desc={project.desc}
+                    tech={project.tech}
+                  />
+                ))}
+              </div>
             </section>
           </div>
         </div>

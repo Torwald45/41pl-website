@@ -25,24 +25,34 @@ const projects = [
     tech: ["SSH", "Docker", "SQL", "Git", "Bash"]
   },
   {
-    title: "Integracje systemów",
+    title: "Prywatność i bezpieczeństwo",
     desc: [
-      "REST API i GraphQL",
-      "Automatyzacja procesów między platformami",
-      "Synchronizacja danych",
-      "Webhook i event-driven architecture"
+      "VPN (WireGuard, OpenVPN) - konfiguracja i wdrożenie",
+      "Szyfrowanie dysków i kontenerów (VeraCrypt)",
+      "Kryptowaluty - portfele, node'y (Bitcoin, Monero)",
+      "Self-hosting i ochrona danych osobowych"
     ],
-    tech: ["Curl", "Postman", "Node.js", "Python", "API documentation"]
+    tech: ["WireGuard", "OpenVPN", "VeraCrypt", "Bitcoin", "Monero"]
   },
   {
-    title: "Migracje i wdrożenia",
+    title: "Wdrożenia Linux i Open Source",
     desc: [
-      "Przeniesienie między hostingami",
-      "Zmiana dostawcy chmury",
-      "Migracja do rozwiązań Open Source",
-      "Transfer danych i konfiguracji"
+      "Instalacja i konfiguracja dystrybucji Linux",
+      "Migracja z Windows na Linux",
+      "Dobór i wdrażanie narzędzi Open Source",
+      "Szkolenia dla zespołów"
     ],
-    tech: ["rsync", "mysqldump", "Docker", "Ansible", "Bash"]
+    tech: ["Linux", "Debian", "Ubuntu", "Open Source", "Migration"]
+  },
+  {
+    title: "Szkolenia IT",
+    desc: [
+      "Linux - podstawy i administracja",
+      "Self-hosting i prywatne chmury",
+      "Git, Docker, narzędzia DevOps",
+      "Szkolenia indywidualne i zespołowe"
+    ],
+    tech: ["Linux", "Docker", "Git", "Training", "Open Source"]
   }
 ];
 ---
@@ -51,36 +61,42 @@ const projects = [
   <Header title="Inne usługi | 41.pl" />
   <body>
     <div class="content">
-        <Sidebar selectedItem="personal-projects" />
+      <Sidebar selectedItem="personal-projects" />
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block"
-              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
-              <div>Powrót</div></a
-            >
+            <a href="/" class="back-nav-button w-inline-block">
+              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Powrót</div>
+            </a>
           </div>
           <div class="content-container">
             <h1>Inne usługi</h1>
             
             <p class="lead">
-              Pomagamy w sytuacjach, które wymagają szybkiej reakcji lub specjalistycznej wiedzy. Przeprowadzamy audyty techniczne stron i infrastruktury, diagnozujemy problemy i naprawiamy błędy na produkcji. Doradzamy w doborze rozwiązań technicznych i pomagamy w ich wdrożeniu. Integrujemy różne systemy przez API, łączymy platformy i automatyzujemy procesy. Wspieramy w migracji danych, przeniesieniu między serwerami i zmianie technologii. Doradzamy w kwestiach bezpieczeństwa, wydajności i optymalizacji kosztów.
+              Audyty techniczne - kod, bazy danych, wydajność aplikacji. Identyfikujemy wąskie gardła i proponujemy konkretne rozwiązania. Przegląd architektury, analiza bezpieczeństwa, optymalizacja SQL. Naprawy produkcyjne 7 dni w tygodniu - awarie, błędy w kodzie, problemy z bazami, debugging na żywo.
             </p>
             
             <p class="lead">
-              Wykonujemy audyty kodu, baz danych, konfiguracji serwerów i wydajności aplikacji. Identyfikujemy wąskie gardła i proponujemy konkretne rozwiązania. Naprawiamy problemy produkcyjne - awarie serwerów, błędy w kodzie, problemy z bazami danych czy DNS. Budujemy integracje REST API i GraphQL między różnymi systemami. Pomagamy w doborze narzędzi Open Source dopasowanych do konkretnych potrzeb i budżetu. Przeprowadzamy migracje między hostingami, dostawcami chmury i systemami CMS. Wdrażamy szyfrowanie, VPN, self-hosting solutions i inne rozwiązania zwiększające prywatność i bezpieczeństwo.
+              Prywatność i bezpieczeństwo - wdrażamy VPN (WireGuard, OpenVPN), szyfrowanie dysków i kontenerów (VeraCrypt), konfigurujemy portfele i node'y kryptowalut (Bitcoin, Monero). Self-hosting i ochrona danych osobowych. Migracje z Windows na Linux. Instalacja dystrybucji, dobór i wdrażanie narzędzi Open Source.
             </p>
-
+            
+            <p class="lead">
+              Szkolenia IT - Linux (podstawy i administracja), self-hosting, prywatne chmury, Git, Docker, narzędzia DevOps. Szkolenia indywidualne i zespołowe dopasowane do poziomu i potrzeb.
+            </p>
+            
+            <h3 class="lead">Przykładowe realizacje:</h3>
+            
             <section class="items-container">
-                <div class="resouce-items">
-                    {projects.map(project => (
-                      <Project 
-                        title={project.title} 
-                        desc={project.desc}
-                        tech={project.tech}
-                      />
-                    ))}
-                  </div>
+              <div class="resouce-items">
+                {projects.map(project => (
+                  <Project 
+                    title={project.title} 
+                    desc={project.desc}
+                    tech={project.tech}
+                  />
+                ))}
+              </div>
             </section>
           </div>
         </div>

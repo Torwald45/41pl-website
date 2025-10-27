@@ -1,0 +1,97 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const projects = [
+  {
+    title: "Automatyzacja procesów",
+    desc: [
+      "Skrypty backupu i synchronizacji danych",
+      "Automatyczne generowanie raportów",
+      "Cronjobs i zadania cykliczne",
+      "Monitoring i alerty przy błędach"
+    ],
+    tech: ["Python", "Bash", "Cron", "rsync", "API"]
+  },
+  {
+    title: "Narzędzia CLI",
+    desc: [
+      "Command-line tools do zarządzania danymi",
+      "Skrypty administracyjne dla serwerów",
+      "Batch processing dużych plików",
+      "Import/export danych między systemami"
+    ],
+    tech: ["Python", "Bash", "Node.js", "Git", "SQL"]
+  },
+  {
+    title: "Integracje i API",
+    desc: [
+      "Połączenia między różnymi platformami",
+      "Synchronizacja danych w czasie rzeczywistym",
+      "Webhooks i event-driven automation",
+      "Custom API endpoints dla aplikacji"
+    ],
+    tech: ["REST API", "GraphQL", "Webhooks", "Curl", "Postman"]
+  },
+  {
+    title: "Custom solutions",
+    desc: [
+      "Wtyczki WP/Woo specjalistyczne",
+      "Kalkulatory biznesowe i narzędzia online",
+      "Formularze z zaawansowaną logiką",
+      "Dedykowane rozwiązania dopasowane do potrzeb"
+    ],
+    tech: ["PHP", "JavaScript", "HTML/CSS", "SQL", "Git"]
+  }
+];
+---
+<!DOCTYPE html>
+<html>
+  <Header title="Programowanie | 41.pl" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="programowanie" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block">
+              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Powrót</div>
+            </a>
+          </div>
+          <div class="content-container">
+            <h1>Programowanie</h1>
+            
+            <p class="lead">
+              Programujemy rozwiązania na zamówienie - kalkulatory biznesowe, zaawansowane formularze z walidacją, dedykowane wtyczki WP/Woo. Integrujemy systemy przez REST API, GraphQL i webhooks. Synchronizacja danych w czasie rzeczywistym. Automatyzacja oparta na zdarzeniach (event-driven).
+            </p>
+            
+            <p class="lead">
+              Tworzymy narzędzia CLI i skrypty automatyzujące zadania - backupy, przetwarzanie danych, generowanie raportów. Cronjobs, monitoring i alerty. Skrypty w Python i Bash. Aplikacje w Node.js.
+            </p>
+            
+            <p class="lead">
+              Każde rozwiązanie projektujemy od podstaw, testujemy i dokumentujemy. Skupiamy się na prostocie, wydajności i łatwości utrzymania kodu.
+            </p>
+            
+            <h3 class="lead">Przykładowe realizacje:</h3>
+            
+            <section class="items-container">
+              <div class="resouce-items">
+                {projects.map(project => (
+                  <Project 
+                    title={project.title} 
+                    desc={project.desc}
+                    tech={project.tech}
+                  />
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

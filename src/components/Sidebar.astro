@@ -60,7 +60,7 @@ const { selectedItem } = Astro.props;
         <div>Administracja serwerami</div>
       </a>
       <a
-        href="/tworzenie-stron-internetowych"
+        href="/tworzenie-stron-internetowych-i-aplikacji"
         class={`nav-link-container w-inline-block ${
           selectedItem === 'devops' ? 'w--current' : ''
         }`}
@@ -71,8 +71,24 @@ const { selectedItem } = Astro.props;
           alt=""
           class="nav-link-image"
         />
-        <div>Tworzenie stron internetowych</div>
+        <div>Tworzenie stron internetowych i aplikacji</div>
       </a>
+      <a
+        href="/programowanie"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'programowanie' ? 'w--current' : ''
+        }`}
+      >
+        <img
+          src="/assets/programowanie.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Programowanie</div>
+      </a>
+
+
       <a
         href="/inne-uslugi"
         class={`nav-link-container w-inline-block ${
@@ -80,7 +96,7 @@ const { selectedItem } = Astro.props;
         }`}
       >
         <img
-          src="/assets/programowanie.svg"
+          src="/assets/inne.svg"
           loading="eager"
           alt=""
           class="nav-link-image"
